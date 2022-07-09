@@ -1,37 +1,31 @@
-// SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.13;
-import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
-contract Frenzone  is ReentrancyGuard {
+//SPDX-License-Identifier: Unlicense
+pragma solidity ^0.8.0;
 
-  uint public postId;
 
-  struct Post {
-    address creator;
-    uint id ;
-    string caption;
-    string imageHash;
-    uint publishedTime; 
-  }
+contract Frenzone{
 
-  Post[] public posts;
-  mapping(address => Post[]) public UserToPosts;
+    uint public totalPosts=0;
+    
+    event post(address user,uint id ,string filehash,uint time,string desc);
 
-  function createPost(string memory _caption, string memory _postHash) external nonReentrant {
-    posts.push(Post(msg.sender, postId, _caption,_postHash, block.timestamp));
-    UserToPosts[msg.sender].push(Post(msg.sender, postId, _caption,_postHash, block.timestamp));
-    postId++;
-  }
+    struct Post{
+        address user;
+        uint id;
+        string filehash;
+        uint timestamp;
+        string desc;
+    }
 
-  function getPostsByUser(address _user) external view returns(Post[] memory) {
-    return UserToPosts[_user];
-  }
+    Post[]  posts;
 
-  function getPostById(uint _postId) external view returns(Post memory) {
-    return posts[_postId];
-  }
+    function setHash(string memory _fileHash,string memory _desc) public{
+        posts.push(Post(msg.sender,totalPosts,_fileHash,block.timestamp,_desc));
+        emit post(msg.sender,totalPosts , _fileHash,block.timestamp,_desc);
+        totalPosts++;
+    }
 
-  function getNumberOfPosts() external view returns(uint){
-    return postId ; 
-  }
-  
+    function getAllPosts() public view returns(Post[] memory) {
+        return posts;
+    }
+
 }
