@@ -4,6 +4,7 @@ import "./App.css";
 import Footer from "./components/footer";
 import Loader from "./components/loader";
 import Navbar from "./components/navbar";
+import "./index.css";
 const App = () => {
   const {
     currentAccount,
