@@ -1,6 +1,7 @@
 # frenzone
-A decentralised social media platform to share files anonymously
+
+Frenzone is a decentralized social media application on polygon Mumbai testnet. Users can connect wallet to the dapp and anonymously share images and posts with other participants on the platform. Frenzone makes it easy to post your content on the internet without revealing your identity and without any kinda censorship. Frenzone is using IPFS which is a distributed peer-to-peer database which means all the content or images uploaded on frenzone is immutable, safe, and secured by IPFS and the polygon network.
 
 
-<iframe src="https://player.vimeo.com/video/728507811?h=33eca5ccb6" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-<p><a href="https://vimeo.com/728507811">Frenzone - Google Chrome 2022-07-10 11-05-30.mp4</a> from <a href="https://vimeo.com/user179633203">Kundan Mishra</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
+![Screenshot (140)](https://user-images.githubusercontent.com/76939349/178146701-29b63254-d8ec-413f-9cee-8c0e0fd67c53.png)
